@@ -1,3 +1,6 @@
+using mf_projeto_teste_gabriel_2024.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace mf_projeto_teste_gabriel_2024
 {
     public class Program
@@ -10,6 +13,9 @@ namespace mf_projeto_teste_gabriel_2024
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+            builder.Services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
