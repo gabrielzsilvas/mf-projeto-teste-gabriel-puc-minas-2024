@@ -15,7 +15,7 @@ namespace mf_projeto_teste_gabriel_2024.Controllers
 
         public IActionResult Index()
         {
-            return View();
+           return RedirectToAction("Index", "Veiculos");
         }
 
         public IActionResult Privacy()
